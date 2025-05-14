@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="description" content="Kartavya Karni Seva Foundation - Uplifting lives through kindness and action.">
+  <meta name="keywords" content="NGO, Charity, Donation, Social Impact, Kartavya Karni Seva">
+  <meta property="og:image" content="path/to/your/image.jpg">
+  <title>Kartavya Karni Seva</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header id="main-header">
+    <nav class="navbar">
+      <div class="logo">Kartavya Karni Seva</div>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="nav-links" id="navLinks">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/about" class="nav-link">About Us</a>
+        <a href="/impact" class="nav-link">Our Impact</a>
+        <a href="/donate" class="nav-link">Donate</a>
+        <a href="/contact" class="nav-link">Contact Us</a>
+        <button id="logoutBtn" class="nav-button">Logout</button>
+      </div>
+    </nav>
+  </header>
+
+
+<!-- Donation Form Section -->
+<section class="donation-form-section">
+  <h2>Make a Donation</h2>
+  <p>Your contribution will make a lasting impact on many lives!</p>
+  
+  <form id="donation-form" class="donation-form">
+    <!-- Donor details -->
+    <label for="donor_name">Full Name</label>
+    <input type="text" id="donor-name" name="donor_name" placeholder="Enter your full name" required />
+    
+    <label for="donor_email">Email</label>
+    <input type="email" id="donor_email" name="donor_email" placeholder="Enter your email" required />
+    
+    <label for="donor_phone">Phone Number</label>
+    <input type="tel" id="donor_phone" name="donor_phone" placeholder="Enter your phone number" required />
+    
+    <label for="donation_amount">Donation Amount (INR)</label>
+    <input type="number" id="donation_amount" name="donation_amount" placeholder="Enter donation amount" required />
+    
+    <label for="donation_message">Message (Optional)</label>
+    <textarea id="donation_message" name="donation_message" placeholder="Add a personal message" rows="3"></textarea>
+    
+    <!-- Donation Button -->
+    <button type="submit">Donate Now</button>
+  </form>
+</section>
+
+<!-- Payment Gateway Section -->
+<section class="payment-gateway-section">
+  <!-- Razorpay Payment Button -->
+  <!-- <form>
+    <script src="https://checkout.razorpay.com/v1/payment-button.js"
+            data-payment_button_id="pl_YOUR_BUTTON_ID_HERE">
+    </script>
+  </form> -->
+  
+  <!-- QR Code Section -->
+  <h3>Donate via QR Code</h3>
+  <p>Scan the QR code below to donate directly via UPI or your mobile banking app.</p>
+  
+  <!-- QR Code Image -->
+  <div class="qr-code-container">
+    <img src="images/KKS_QRcode.jpg" alt="QR Code for Donation" class="qr-code" />
+  </div>
+  
+  <!-- <p>Please ensure to share a screenshot or confirmation once the payment is successful.</p> -->
+</section>
+
+
+<!-- Bank Transfer Details Section -->
+<section class="bank-transfer-section">
+  <h2>Donate via Bank Transfer</h2>
+  <p>If you prefer to donate via bank transfer, here are the details:</p>
+  <ul>
+    <li><strong>Account Name:</strong> MR. SHAKTISINH N WAGHELA</li>
+    <li><strong>Bank Name:</strong> Saraswat Co-operative Bak Ltd.</li>
+    <li><strong>Account Number:</strong> 510000000159218</li>
+    <li><strong>IFSC Code:</strong> SRCB0000244</li>
+    <li><strong>Branch:</strong> Dahisar West, Mumbai</li>
+  </ul>
+  <p>Please share a screenshot of your transaction for confirmation.</p>
+</section>
+
+<!-- Volunteer Form Section -->
+<section class="volunteer-form-section">
+  <h2>Become a Volunteer</h2>
+  <p>We appreciate your willingness to help. Please fill out the form to get started.</p>
+  <form id="volunteer-form" class="volunteer-form">
+    <label for="vol_name">Full Name</label>
+    <input type="text" id="vol_name" name="vol_name" placeholder="Enter your full name" required />
+
+    <label for="vol_email">Email</label>
+    <input type="email" id="vol_email" name="vol_email" placeholder="Enter your email" required />
+
+    <label for="vol_phone">Phone Number</label>
+    <input type="tel" id="vol_phone" name="vol_phone" placeholder="Enter your phone number" required />
+
+    <label for="vol_location">Location</label>
+    <input type="text" id="vol_location" name="vol_location" placeholder="Where are you located?" required />
+
+    <label for="vol_message">Why do you want to volunteer?</label>
+    <textarea id="vol_message" name="vol_message" placeholder="Tell us your reason" rows="4" required></textarea>
+
+    <button type="submit">Submit Volunteer Form</button>
+  </form>
+</section>
+
+  <!-- FOOTER SECTION -->
+  <footer class="site-footer">
+    <div class="section-container footer-container">
+
+      <!-- Quick Links -->
+      <div class="footer-box">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/impact">Our Impact</a></li>
+          <li><a href="/donate">Donate</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- About + Contact Info -->
+      <div class="footer-box">
+        <h3>About Kartavya</h3>
+        <p>
+          A mission started by friends, growing with compassion. We aim to uplift lives through small acts of kindness and large-hearted action.
+        </p>
+        <p><strong>Email:</strong> support@kartavya.org</p>
+        <p><strong>Phone:</strong> +91 98765 43210</p>
+      </div>
+
+  <!-- Social Media -->
+  <div class="footer-box">
+    <h3>Connect With Us</h3>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/kartavyakarnisevafoundation?igsh=MWh2M2ljdzBibThn" target="_blank" title="Instagram" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://wa.me/+919619618098" target="_blank">
+        <i class="fab fa-whatsapp"></i> 
+      </a>                  
+    </div>
+  </div>
+</div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Kartavya Karni Seva Foundation. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+  </script>
+
+  <script src="script.js"></script>
+  <script>
+    // Handle Donation Form Submission
+    document.getElementById("donation-form").addEventListener("submit", async function (e) {
+      e.preventDefault();
+  
+      const form = e.target;
+      const formData = new FormData(form);
+  
+      const response = await fetch("http://localhost:8000/donations", {
+        method: "POST",
+        body: formData,
+      });
+  
+      const result = await response.json();
+  
+      const msg = document.createElement("p");
+      msg.textContent = result.message || "Donation submitted successfully!";
+      msg.style.color = "green";
+      form.appendChild(msg);
+  
+      form.reset(); // Clear form fields
+    });
+  
+    // Handle Volunteer Form Submission
+    document.getElementById("volunteer-form").addEventListener("submit", async function (e) {
+      e.preventDefault();
+  
+      const form = e.target;
+      const formData = new FormData(form);
+  
+      const response = await fetch("http://localhost:8000/volunteers", {
+        method: "POST",
+        body: formData,
+      });
+  
+      const result = await response.json();
+  
+      const msg = document.createElement("p");
+      msg.textContent = result.message || "Volunteer form submitted successfully!";
+      msg.style.color = "green";
+      form.appendChild(msg);
+  
+      form.reset(); // Clear form fields
+    });
+  </script>
+  
+  <script>
+    document.getElementById("logoutBtn").addEventListener("click", async () => {
+      try {
+        const response = await fetch("http://localhost:8000/logout", {
+          method: "POST",
+          credentials: "include"
+        });
+  
+        if (response.ok) {
+          // Redirect to login page or home
+          window.location.href = "/login";
+        } else {
+          alert("Logout failed");
+        }
+      } catch (error) {
+        console.error("Error during logout:", error);
+      }
+    });
+  </script>
+  
+</body>
+</html>

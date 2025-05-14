@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="description" content="Kartavya Karni Seva Foundation - Uplifting lives through kindness and action.">
+  <meta name="keywords" content="NGO, Charity, Donation, Social Impact, Kartavya Karni Seva">
+  <meta property="og:image" content="path/to/your/image.jpg">
+  <title>Kartavya Karni Seva</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    .form-message {
+      margin-top: 1em;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header id="main-header">
+    <nav class="navbar">
+      <div class="logo">Kartavya Karni Seva</div>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="nav-links" id="navLinks">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/about" class="nav-link">About Us</a>
+        <a href="/impact" class="nav-link">Our Impact</a>
+        <a href="/donate" class="nav-link">Donate</a>
+        <a href="/contact" class="nav-link">Contact Us</a>
+        <button id="logoutBtn" class="nav-button">Logout</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Page Title -->
+  <section class="contact-heading">
+    <h1>Contact Us</h1>
+    <p class="contact-subtext">We had love to hear from you! Reach out for donations, collaborations, or volunteering queries.</p>
+  </section>
+
+  <!-- Contact Info -->
+  <section class="contact-info">
+    <h2>Get in Touch</h2>
+    <ul>
+      <li><strong>Email:</strong> kartavyakarnisena@gmail.com</li>
+      <li><strong>Phone:</strong> +919619618098</li>
+      <li><strong>Address:</strong> Dahisar East, Mumbai 400068</li>
+    </ul>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="contact-form">
+    <h2>Send Us a Message</h2>
+    <form id="contactForm">
+      <label for="full_name">Full Name:</label>
+      <input type="text" id="full_name" name="full_name" class="form-input" placeholder="Enter your full name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email address" required />
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" class="form-textarea" placeholder="Write your message here..." required></textarea>
+
+      <button type="submit" class="submit-button">Send Message</button>
+    </form>
+
+    <!-- Inline success or error message -->
+    <div id="formMessage" class="form-message"></div>
+  </section>
+
+  <!-- CTA -->
+  <section class="contact-cta">
+    <h3>Need Help Quickly?</h3>
+    <p>
+      Email us directly at 
+      <a href="mailto:kartavyakarnisena@gmail.com">kartavyakarnisena@gmail.com</a> 
+      or message us on 
+      <a href="https://wa.me/919619618098" target="_blank">WhatsApp</a>.
+    </p>
+  </section>
+
+  <!-- FOOTER SECTION -->
+  <footer class="site-footer">
+    <div class="section-container footer-container">
+
+      <!-- Quick Links -->
+      <div class="footer-box">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/impact">Our Impact</a></li>
+          <li><a href="/donate">Donate</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- About + Contact Info -->
+      <div class="footer-box">
+        <h3>About Kartavya</h3>
+        <p>
+          A mission started by friends, growing with compassion. We aim to uplift lives through small acts of kindness and large-hearted action.
+        </p>
+        <p><strong>Email:</strong> support@kartavya.org</p>
+        <p><strong>Phone:</strong> +91 98765 43210</p>
+      </div>
+
+      <!-- Social Media -->
+      <div class="footer-box">
+        <h3>Connect With Us</h3>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/kartavyakarnisevafoundation?igsh=MWh2M2ljdzBibThn" target="_blank" title="Instagram" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://wa.me/+919619618098" target="_blank">
+            <i class="fab fa-whatsapp"></i> 
+          </a>                  
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Kartavya Karni Seva Foundation. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+
+    document.getElementById("logoutBtn").addEventListener("click", async () => {
+      try {
+        const response = await fetch("http://localhost:8000/logout", {
+          method: "POST",
+          credentials: "include"
+        });
+
+        if (response.ok) {
+          window.location.href = "/login";
+        } else {
+          console.error("Logout failed");
+        }
+      } catch (error) {
+        console.error("Error during logout:", error);
+      }
+    });
+
+    document.getElementById("contactForm").addEventListener("submit", async function(e) {
+      e.preventDefault();
+    
+      const formData = new FormData(this);
+      const messageDiv = document.getElementById("formMessage");
+    
+      try {
+        const response = await fetch("http://localhost:8000/contact", {
+          method: "POST",
+          body: formData
+        });
+
+        if (response.ok) {
+          messageDiv.textContent = "Message sent successfully!";
+          messageDiv.style.color = "green";
+          this.reset();
+        } else {
+          messageDiv.textContent = "Failed to send message. Please try again.";
+          messageDiv.style.color = "red";
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        messageDiv.textContent = "An error occurred. Please try again.";
+        messageDiv.style.color = "red";
+      }
+    });
+  </script>
+
+</body>
+</html>

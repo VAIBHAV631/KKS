@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="description" content="Kartavya Karni Seva Foundation - Uplifting lives through kindness and action.">
+  <meta name="keywords" content="NGO, Charity, Donation, Social Impact, Kartavya Karni Seva">
+  <meta property="og:image" content="path/to/your/image.jpg">
+  <title>Kartavya Karni Seva</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header id="main-header">
+    <nav class="navbar">
+      <div class="logo">Kartavya Karni Seva</div>
+
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="nav-links" id="navLinks">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/about" class="nav-link">About Us</a>
+        <a href="/impact" class="nav-link">Our Impact</a>
+        <a href="/donate" class="nav-link">Donate</a>
+        <a href="/contact" class="nav-link">Contact Us</a>
+        <button id="logoutBtn" class="nav-button">Logout</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="hero-overlay">
+        <div class="section-container">
+          <h1>Serving For Humanity!</h1>
+          <p>Kartavya Karni Seva Foundation — A mission to uplift lives through kindness and action.</p>
+          <a href="/donate" class="donate-btn" aria-label="Donate Now">Donate Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOME BRIEF SECTION -->
+    <section class="home-briefs">
+      <div class="section-container briefs-container">
+
+        <!-- ABOUT CARD -->
+        <div class="section-box">
+          <h2>Who We Are And What We Do...</h2>
+          <p>
+            Kartavya Karni Seva Foundation was founded on 1st January 2023 by a close-knit group of friends who believed in the power of giving. What started as small contributions and heartfelt efforts soon transformed into a larger mission — to serve the underprivileged with compassion, dignity, and hope.
+          </p> 
+          <a href="/about" class="brief-btn">Read More</a>
+        </div>
+
+        <!-- IMPACT CARD -->
+        <div class="section-box">
+          <h2>Our Impact</h2>
+          <p>
+            Since our beginning in January 2023, Kartavya Karni Seva Foundation has made a meaningful difference — from distributing meals and essentials to supporting children’s education and healthcare needs.
+          </p>
+          <a href="/impact" class="brief-btn">See Our Impact</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- AUTO DONATION SLIDER SECTION -->
+    <section class="donate-slider">
+      <div class="slider-container">
+        <!-- Slides -->
+        <div class="slides fade">
+          <img src="../../images/home_page1.jpg" alt="Books donated by the foundation">
+        </div>
+
+        <!-- Donation CTA -->
+        <div class="donate-call">
+          <a href="/donate" class="donate-btn" aria-label="Donate Now">Donate Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT US SECTION -->
+    <section class="contact-section">
+      <div class="contact-container">
+        <!-- Left Side -->
+        <div class="contact-text">
+          <h2>Let's Connect</h2>
+          <p>Have questions, ideas, or want to work with us to create change? <br> We’d love to hear from you!</p>
+          <ul class="contact-details">
+            <li><i class="fas fa-envelope"></i> supportkartavyakarni@gmail.com</li>
+            <li><i class="fas fa-phone-alt"></i> +91 98765 43210</li>
+            <li><i class="fas fa-map-marker-alt"></i> Mumbai, India</li>
+          </ul>
+          <a href="/contact" class="contact-btn" aria-label="Send a Message">Send a Message <i class="fas fa-paper-plane"></i></a>
+        </div>
+
+        <!-- Right Side -->
+        <div class="contact-image">
+          <img src="images/donate_illustration.png" alt="Contact Illustration" />
+        </div>
+      </div>
+    </section>
+  </main>
+  <hr>
+
+  <!-- FOOTER SECTION -->
+  <footer class="site-footer">
+    <div class="section-container footer-container">
+
+      <!-- Quick Links -->
+      <div class="footer-box">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/impact">Our Impact</a></li>
+          <li><a href="/donate">Donate</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- About + Contact Info -->
+      <div class="footer-box">
+        <h3>About Kartavya</h3>
+        <p>
+          A mission started by friends, growing with compassion. We aim to uplift lives through small acts of kindness and large-hearted action.
+        </p>
+        <p><strong>Email:</strong> support@kartavya.org</p>
+        <p><strong>Phone:</strong> +91 98765 43210</p>
+      </div>
+
+      <!-- Social Media -->
+      <div class="footer-box">
+        <h3>Connect With Us</h3>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/kartavyakarnisevafoundation?igsh=MWh2M2ljdzBibThn" target="_blank" title="Instagram" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://wa.me/+919619618098" target="_blank">
+            <i class="fab fa-whatsapp"></i> 
+          </a>                  
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Kartavya Karni Seva Foundation. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+  </script>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById("logoutBtn").addEventListener("click", async () => {
+      try {
+        const response = await fetch("http://localhost:8000/logout", {
+          method: "POST",
+          credentials: "include"
+        });
+  
+        if (response.ok) {
+          // Redirect to login page or home
+          window.location.href = "/login";
+        } else {
+          alert("Logout failed");
+        }
+      } catch (error) {
+        console.error("Error during logout:", error);
+      }
+    });
+  </script>
+  
+</body>
+</html>

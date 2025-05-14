@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body id="register-page">
+  <form class="register-form" onsubmit="return handleRegister(event)">
+    <h2>Register</h2>
+
+    <label for="username">Username</label>
+    <input type="text" name="username" id="username" placeholder="Enter Username" required />
+
+    <label for="password">Password</label>
+    <div class="password-wrapper">
+      <input type="password" name="password" id="password" placeholder="Enter Password" required />
+      <i class="fa-solid fa-eye toggle-password" onclick="togglePassword('password', this)"></i>
+    </div>
+
+    <label for="confirm">Confirm Password</label>
+    <div class="password-wrapper">
+      <input type="password" name="confirm" id="confirm" placeholder="Confirm Password" required />
+      <i class="fa-solid fa-eye toggle-password" onclick="togglePassword('confirm', this)"></i>
+    </div>
+
+    <button type="submit">Register</button>
+    <a href="/login">Already have an account? Login</a>
+  </form>
+
+  <script>
+    async function handleRegister(e) {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const res = await fetch("http://localhost:8000/register", {
+        method: "POST",
+        body: formData
+      });
+      const data = await res.json();
+      alert(data.message);
+    }
+
+    function togglePassword(id, icon) {
+      const input = document.getElementById(id);
+      if (input.type === "password") {
+        input.type = "text";
+        icon.classList.remove("fa-eye");
+        icon.classList.add("fa-eye-slash");
+      } else {
+        input.type = "password";
+        icon.classList.remove("fa-eye-slash");
+        icon.classList.add("fa-eye");
+      }
+    }
+  </script>
+</body>
+</html>
