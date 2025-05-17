@@ -3,6 +3,7 @@
 <head>
   <title>Register</title>
   <link rel="stylesheet" href="/style.css">
+  <script src="/config.js"></script> <!-- ✅ Inject BACKEND_URL -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body id="register-page">
@@ -32,7 +33,7 @@
     async function handleRegister(e) {
       e.preventDefault();
       const formData = new FormData(e.target);
-      const res = await fetch("http://localhost:8000/register", {
+      const res = await fetch(`${window.BACKEND_URL}/register`, {
         method: "POST",
         body: formData
       });

@@ -1,9 +1,9 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
 <head>
   <title>Login</title>
   <link rel="stylesheet" href="/style.css">
-  <!-- Font Awesome for eye icon -->
+  <script src="/config.js"></script> <!-- ✅ Inject BACKEND_URL -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body id="login-page">
@@ -11,7 +11,6 @@
     <h2>Login</h2>
     <input type="text" name="username" placeholder="Username" required />
 
-    <!-- Password input with eye toggle -->
     <div class="password-wrapper">
       <input type="password" name="password" id="password" placeholder="Password" required />
       <span class="toggle-password" onclick="togglePasswordVisibility()">
@@ -27,21 +26,21 @@
     async function handleLogin(e) {
       e.preventDefault();
       const formData = new FormData(e.target);
-      const res = await fetch("http://localhost:8000/login", {
+
+      const res = await fetch(`${window.BACKEND_URL}/login`, {
         method: "POST",
         body: formData,
-        credentials: "include" // include cookies
+        credentials: "include"
       });
-  
+
       const data = await res.json();
       if (res.ok) {
-        window.location.href = '/'; // Redirect to home
+        window.location.href = '/';
       } else {
         alert(data.detail || 'Login failed');
       }
     }
 
-    // Toggle password visibility
     function togglePasswordVisibility() {
       const passwordInput = document.getElementById("password");
       const eyeIcon = document.getElementById("eyeIcon");

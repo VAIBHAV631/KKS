@@ -8,6 +8,7 @@
   <meta property="og:image" content="img/about-preview.jpg">
   <title>About Us - Kartavya Karni Seva</title>
   <link rel="stylesheet" href="/style.css">
+  <script src="/config.js"></script> <!-- ✅ Inject BACKEND_URL -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -229,7 +230,8 @@
   <script>
     document.getElementById("logoutBtn").addEventListener("click", async () => {
       try {
-        const response = await fetch("http://localhost:8000/logout", {
+        
+        const response = await fetch(`${window.BACKEND_URL}/logout`, {
           method: "POST",
           credentials: "include"
         });
